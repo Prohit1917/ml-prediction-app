@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
 # Load the saved model
-best_model = joblib.load('D:\web_app\pre_mod.pkl')
+best_model = joblib.load('pre_mod.pkl')
 
 scaler = MinMaxScaler()
 
