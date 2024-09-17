@@ -9,7 +9,7 @@ best_model = joblib.load('pre_mod.pkl')
 scaler = joblib.load('scaler.pkl')  # Ensure you have the scaler file 
 
 # Define the Streamlit app
-st.title('Machine Learning Prediction App')
+st.title('Difficult airway predictor')
 
 # Collect user input data for prediction
 st.header('Enter Patient Data for Prediction')
@@ -83,6 +83,18 @@ if submit_button:
         reverse_mapping = {0: '1', 1: '2a', 2: '2b', 3: '3a', 4: '3b'}
         result = reverse_mapping[prediction[0]]
         st.success(f'Predicted CL Grade: {result}')
+
+        st.session_state['Ht'] = ''
+        st.session_state['Wt'] = ''
+        st.session_state['Interincisior_gap'] = ''
+        st.session_state['Sternomental_Distance'] = ''
+        st.session_state['Thyromental_Ht'] = ''
+        st.session_state['Neck_Circumference'] = ''
+        st.session_state['MPC'] = ''
+        st.session_state['ULBT'] = ''
+        st.session_state['Age'] = ''
+        st.session_state['Gender'] = 'M'
+        
     except ValueError:
         st.error("Please enter valid numbers for all input fields.")
     except Exception as e:
