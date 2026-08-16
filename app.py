@@ -9,7 +9,7 @@ best_model = joblib.load('pre_mod.pkl')
 scaler = joblib.load('scaler.pkl')  # Ensure you have the scaler file 
 
 # Define the Streamlit app
-st.title('Difficult airway predictor')
+st.title('Difficult Tracheal Intubation Prediction Model')
 
 # Collect user input data for prediction
 st.header('Enter Patient Data for Prediction')
